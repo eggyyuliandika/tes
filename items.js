@@ -3,3 +3,5 @@ let items = [
   { id: "2", name: "Item Two" },
   { id: "3", name: "Item Three" },
 ];
+
+module.exports = items;
