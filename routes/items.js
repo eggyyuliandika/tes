@@ -33,6 +33,13 @@ const getItemOpts = {
 //options fot add item
 const postItemOpts = {
   schema: {
+    body: {
+      type: "object",
+      required: ["name"],
+      properties: {
+        name: { type: "string" },
+      },
+    },
     response: {
       201: Item,
     },
@@ -47,7 +54,7 @@ function itemRoutes(fastify, option, done) {
   fastify.get("/items/:id", getItemOpts);
 
   //add item
-  fastify.post('/items', postItemOpts)
+  fastify.post("/items", postItemOpts);
 
   done();
 }
